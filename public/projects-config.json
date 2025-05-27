@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "name": "Portal",
+      "description": "Project 1 description",
+      "publicUrl": "https://portal.com",
+      "repoUrl": "https://github.com/portal",
+      "resultTag": "portal"
+    },
+    {
+      "name": "No reports",
+      "description": "Project 1 description",
+      "publicUrl": "https://portal.com",
+      "repoUrl": "https://github.com/portal",
+      "resultTag": "no-reports"
+    },
+    {
+      "name": "DS",
+      "description": "Project 2 description",
+      "publicUrl": "https://ds.com",
+      "repoUrl": "https://github.com/ds",
+      "resultTag": "ds"
+    },
+    {
+      "name": "T2R",
+      "description": "Project 3 description",
+      "publicUrl": "https://t2r.com",
+      "repoUrl": "https://github.com/t2r",
+      "resultTag": "t2r"
+    }
+  ]
+}

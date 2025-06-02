@@ -3,7 +3,6 @@ import StickyHeader from "./components/StickyHeader";
 import type { Project, WalkReportData, WalkLoopResult } from "./types";
 import { Repos } from "./features/Repos";
 import ProjectView from "./features/Project";
-// import walkData from "./walkResults.json";
 
 const filterFilesWithLMatchingRules = (
   walkLoopResult: WalkLoopResult

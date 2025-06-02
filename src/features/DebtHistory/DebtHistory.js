@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import ChartSwitcher from "./Elements/ChartSwitcher";
+import ChartDisplay from "./Elements/ChartDisplay";
+import RulesFilter from "./Elements/RulesFilter";
+import ChartTooltip from "./Elements/ChartTooltip";
+export const DebtHistory = ({ chartType, setChartType, data, rules, activeRules, reportResults, ruleStartDates, toggleRule, toggleAll, tags, tagFilter, toggleTag, valueType, switchDataBy, }) => (_jsx("div", { className: "flex flex-row w-full h-full gap-0 mt-8", children: _jsxs("div", { className: "flex-1 flex flex-col gap-4 pr-0 h-full", children: [_jsx(ChartSwitcher, { chartType: chartType, setChartType: setChartType }), _jsxs("div", { className: "flex flex-row w-full h-full gap-0", children: [_jsx("div", { className: "flex-1 h-full", children: _jsx(ChartDisplay, { chartType: chartType, data: data, rules: rules, activeRules: activeRules, colors: reportResults.rulesColors, renderTooltip: ChartTooltip, ruleStartDates: ruleStartDates }) }), _jsx("div", { className: "w-[320px] min-w-[260px] max-w-xs px-6 py-4", children: _jsx(RulesFilter, { rules: rules, activeRules: activeRules, toggleRule: toggleRule, toggleAll: toggleAll, tags: tags, tagFilter: tagFilter, toggleTag: toggleTag, valueType: valueType, switchDataBy: switchDataBy }) })] })] }) }));

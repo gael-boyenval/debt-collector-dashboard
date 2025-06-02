@@ -38,6 +38,7 @@ interface SanitizedRulesCommonKeys {
   tags?: string[];
   startTrackingDate?: string;
 }
+
 export type SanitizedFileRule = SanitizedRulesCommonKeys & {
   matchRule: (utils: MatchRuleUtils) => number;
 };
@@ -143,8 +144,7 @@ export type WalkReportData = {
   results: WalkResults;
 };
 
-type TagName = string;
-export type WalkReportTagList = Record<TagName, RuleId[]>;
+export type WalkReportTagList = Record<string, RuleId[]>;
 
 export type FileResults = {
   filePath: string;

@@ -15,6 +15,9 @@ const ChartTooltip = ({ payload }: { payload?: Payload<number, string>[] }) => {
       className="bg-gray-900 text-gray-100 p-3 shadow-xl border border-gray-800 text-sm min-w-[180px]"
       style={{ borderRadius: 0 }}
     >
+      <div className="mb-1 text-xl text-gray-200 font-bold">
+        {safePayload[0].payload.commit}
+      </div>
       <div className="mb-1 text-xs text-gray-400">
         {new Date(safePayload[0].payload.commitDate).toLocaleDateString()}
       </div>

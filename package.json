@@ -1,6 +1,6 @@
 {
   "name": "debt-collector-dashboard",
-  "version": "1.0.0-alpha-7",
+  "version": "1.0.0-alpha-8",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "vitest",
     "preview": "vite preview",
-    "release": "f() { npm version ${1:-patch} && pnpm build && npm publish --tag next --access public && git push && git push --tags; }; f"
+    "release": "f() { npm version ${1:-patch} && pnpm build && npm publish --tag next --access public && git push --set-upstream origin main && git push --tags; }; f"
   },
   "files": [
     "lib"

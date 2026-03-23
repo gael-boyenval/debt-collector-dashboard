@@ -20,7 +20,7 @@ const Project = ({ result }: { result: WalkReportData }) => {
         selected={selectedTab}
         onChange={(tab) => setSelectedTab(tab as typeof selectedTab)}
       />
-      <div className="flex flex-col mx-auto w-full h-[calc(100vh-180px)] px-4">
+      <div className="flex flex-col mx-auto w-full flex-1 min-h-0 overflow-y-auto px-4 card-scroll">
         {selectedTab === "chart" && <DebtHistory rawdata={result} />}
         {selectedTab === "table" && <DebtProjection rawdata={result} />}
         {selectedTab === "adoption" && <Adoption rawdata={result} />}

@@ -2,8 +2,27 @@
 
 html, body, #root {
   @apply w-full h-full;
+  overflow: hidden;
 }
 
 #root {
-  @apply bg-gray-50;
+  @apply bg-gray-900;
+}
+
+.card-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.card-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.card-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+.card-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.card-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }

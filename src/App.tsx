@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import StickyHeader from "./components/StickyHeader";
 import type { Project, WalkReportData, WalkLoopResult } from "./types";
 import { Repos } from "./features/Repos";
@@ -10,7 +10,7 @@ const filterFilesWithLMatchingRules = (
   Object.fromEntries(
     Object.entries(walkLoopResult).filter(
       (entries) =>
-        entries[1].brokenRules.length > 0 || entries[1].adoptionRules.length > 0
+        (entries[1].brokenRules?.length ?? 0) > 0 || (entries[1].adoptionRules?.length ?? 0) > 0
     )
   );
 
@@ -68,23 +68,45 @@ const loadProjects = async ({
   setProjects(projects);
 };
 
+const getTagFromHash = () => window.location.hash.replace(/^#\/?/, "") || null;
+
 const App: React.FC = () => {
   const [projects, setProjects] = useState<Project[] | null>(null);
-  const [currentProject, setCurrentProject] = useState<string | null>(null);
+  const [currentTag, setCurrentTag] = useState<string | null>(getTagFromHash);
   const [error, setError] = useState<string | null>(null);
   const isReady = projects && !error;
 
-  const currentProjectData = useMemo(() => {
-    return projects?.find((p) => p.name === currentProject)?.result;
-  }, [projects, currentProject]);
+  const currentProject = useMemo(
+    () => projects?.find((p) => p.resultTag === currentTag) ?? null,
+    [projects, currentTag]
+  );
+
+  const navigateTo = useCallback((tag: string | null) => {
+    const newHash = tag ? `#/${tag}` : "";
+    if (window.location.hash !== newHash) {
+      window.history.pushState(null, "", newHash || window.location.pathname);
+    }
+    setCurrentTag(tag);
+  }, []);
 
   useEffect(() => {
     loadProjects({ setError, setProjects });
   }, []);
 
+  useEffect(() => {
+    const onPopState = () => setCurrentTag(getTagFromHash());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
   return (
-    <div className="bg-gray-900 h-screen w-full font-sans text-gray-100 flex flex-col">
-      <StickyHeader reset={() => setCurrentProject(null)} />
+    <div className="bg-gray-900 h-screen w-full font-sans text-gray-100 flex flex-col overflow-hidden">
+      <StickyHeader
+        reset={() => navigateTo(null)}
+        currentProject={currentProject}
+        projects={projects}
+        navigateTo={navigateTo}
+      />
       {!isReady && !error && <div>Loading...</div>}
       {error && <div>Error: {error}</div>}
 
@@ -92,13 +114,13 @@ const App: React.FC = () => {
         <Repos
           projects={projects}
           gotoProject={(project: Project) =>
-            project.result && setCurrentProject(project.name)
+            project.result && navigateTo(project.resultTag)
           }
         />
       )}
 
-      {isReady && currentProject && currentProjectData && (
-        <ProjectView result={currentProjectData} />
+      {isReady && currentProject?.result && (
+        <ProjectView result={currentProject.result} />
       )}
     </div>
   );

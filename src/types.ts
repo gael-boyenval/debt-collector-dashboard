@@ -24,6 +24,7 @@ export type Project = {
   publicUrl: string;
   repoUrl: string;
   resultTag: string;
+  tags?: string[];
   result?: WalkReportData | null;
 };
 
@@ -86,6 +87,7 @@ export type UserConfig = {
   trackAdoptionMetrics?: {
     label: string;
     id: string;
+    tags?: string[];
     debtRules: string[];
     adoptionRules: string[];
   }[];
@@ -94,6 +96,7 @@ export type UserConfig = {
 export type TrackAdoptionMetric = {
   label: string;
   id: string;
+  tags?: string[];
   debtRules: string[];
   adoptionRules: string[];
 };
@@ -151,7 +154,7 @@ export type FileResults = {
   fileShortPath: string;
   totalScore: number;
   brokenRules: BrokenRule[];
-  adoptionRules: BrokenRule[];
+  adoptionRules?: BrokenRule[];
 };
 export interface CheckResults {
   config: Config;

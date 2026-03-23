@@ -1,32 +1,76 @@
 {
   "projects": [
     {
-      "name": "Portal",
-      "description": "Project 1 description",
-      "publicUrl": "https://portal.com",
-      "repoUrl": "https://github.com/portal",
-      "resultTag": "portal"
+      "name": "Portail Clients",
+      "description": "Portail Clients",
+      "publicUrl": "https://rec-clients.citeo.com/fr/public/login",
+      "repoUrl": "https://dev.azure.com/citeocom/ecdc_prtl/_git/portal",
+      "resultTag": "portal",
+      "tags": ["angular"]
     },
     {
-      "name": "No reports",
-      "description": "Project 1 description",
-      "publicUrl": "https://portal.com",
-      "repoUrl": "https://github.com/portal",
-      "resultTag": "no-reports"
-    },
-    {
-      "name": "DS",
+      "name": "CITEO Design System",
       "description": "Project 2 description",
-      "publicUrl": "https://ds.com",
-      "repoUrl": "https://github.com/ds",
-      "resultTag": "ds"
+      "publicUrl": "https://main--67bf191fa4999a39ab35bb1f.chromatic.com/",
+      "repoUrl": "https://dev.azure.com/citeocom/Design-System",
+      "resultTag": "ds-core",
+      "tags": []
     },
     {
-      "name": "T2R",
-      "description": "Project 3 description",
-      "publicUrl": "https://t2r.com",
-      "repoUrl": "https://github.com/t2r",
-      "resultTag": "t2r"
+      "name": "Tree Fabricant",
+      "description": "Outil d'évaluation de la recyclabilité pour fabricant",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/ecdc_prtl/_git/portal",
+      "resultTag": "prtl",
+      "tags": ["angular"]
+    },
+    {
+      "name": "Espace centre de tri (ECDT)",
+      "description": "Annuaire des centre de tri",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/citeo_ecdt/_git/ecdt_app",
+      "resultTag": "ecdt",
+      "tags": ["angular"]
+    },
+    {
+      "name": "Mon Espace Traçabilité",
+      "description": "Traçabilité des produits",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/_git/mon-espace-tracabilite",
+      "resultTag": "mon-espace-tracabilite",
+      "tags": ["angular"]
+    },
+    {
+      "name": "Laser",
+      "description": "Traçabilité des produits",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/citeo_fldv/_git/fldv-app",
+      "resultTag": "laser",
+      "tags": ["angular"]
+    },
+    {
+      "name": "Observatoire de la qualité",
+      "description": "Suivi de la qualité des matériaux",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/_git/observatoire-qualite",
+      "resultTag": "observatoire-qualite",
+      "tags": ["react"]
+    },
+    {
+      "name": "Espace territoire",
+      "description": "Suivi de la qualité des matériaux",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/portail-collecte-selective/_git/espace-collecte-selective-front",
+      "resultTag": "espace-territoire",
+      "tags": ["react"]
+    },
+    {
+      "name": "plugins gutemberg - ED",
+      "description": "plugins gutemberg pour ED",
+      "publicUrl": "",
+      "repoUrl": "https://dev.azure.com/citeocom/ecosysteme-digital/_git/shared-plugins",
+      "resultTag": "gutemberg-plugins",
+      "tags": ["react"]
     }
   ]
 }

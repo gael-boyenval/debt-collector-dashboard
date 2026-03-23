@@ -6,3 +6,14 @@ export type AdoptionResult = {
   totalDebt: number;
   adoptionRate: number;
 };
+
+export type AdoptionSnapshot = {
+  date: number;
+  label: string;
+  adoptedCount: number;
+  totalCount: number;
+  adoptionRate: number;
+  adoptedNames: string[];
+  newlyAdopted: string[];
+  lost: string[];
+};

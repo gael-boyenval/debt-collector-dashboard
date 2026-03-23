@@ -1,6 +1,8 @@
 {
   "config": {
-    "include": ["ds-core/**/*"],
+    "include": [
+      "ds-core/**/*"
+    ],
     "exclude": [
       "**/storybook-static/**/*",
       "ds-core/src/tokens/**/*",
@@ -8,7 +10,10 @@
     ],
     "fileRules": [
       {
-        "include": ["**/*.scss", "**/*.css"],
+        "include": [
+          "**/*.scss",
+          "**/*.css"
+        ],
         "startTrackingDate": "2025-04-08",
         "exclude": [
           "**/storybook-static/**/*",
@@ -19,10 +24,15 @@
         "id": "REMOVE_DS_CORE_TOKEN",
         "title": "we should get rid of all \"Token\" occurences",
         "debtScore": 3,
-        "tags": ["design-system", "tokens"]
+        "tags": [
+          "design-system",
+          "tokens"
+        ]
       },
       {
-        "include": ["**/*.ts-snapshots/*.png"],
+        "include": [
+          "**/*.ts-snapshots/*.png"
+        ],
         "id": "DELETE_SNAPSHOTS",
         "startTrackingDate": "2025-02-19",
         "title": "we should get rid of all snapshots",
@@ -31,45 +41,113 @@
         "tags": []
       },
       {
-        "include": ["**/*.tsx"],
+        "include": [
+          "**/*.tsx"
+        ],
         "id": "REPLACE_LEGACY_BUTTON",
         "startTrackingDate": "2025-01-19",
         "title": "Replace all legacy buttons by Citeo button component",
         "debtScore": 1,
         "exclude": [],
-        "tags": ["design-system", "components"]
+        "tags": [
+          "design-system",
+          "components"
+        ]
       },
       {
-        "include": ["**/*.tsx"],
+        "include": [
+          "**/*.tsx"
+        ],
         "id": "REPLACE_LEGACY_BADGE",
         "title": "Replace all legacy badges by Citeo badge component",
         "debtScore": 1,
         "startTrackingDate": "2025-03-25",
         "exclude": [],
-        "tags": ["design-system", "components"]
+        "tags": [
+          "design-system",
+          "components"
+        ]
       }
     ],
     "adoptionRules": [
       {
-        "include": ["**/*.tsx"],
+        "include": [
+          "**/*.tsx"
+        ],
         "id": "USAGE_CITEO_BTN",
-        "tags": ["design-system"],
+        "tags": [
+          "design-system"
+        ],
         "title": "Citeo button component",
         "startTrackingDate": "2025-05-19"
       },
       {
-        "include": ["**/*.tsx"],
+        "include": [
+          "**/*.tsx"
+        ],
         "id": "USAGE_CITEO_BADGE",
-        "tags": ["design-system", "components"],
+        "tags": [
+          "design-system",
+          "components"
+        ],
         "title": "Citeo badge component",
         "startTrackingDate": "2025-05-19"
       },
       {
-        "include": ["**/*.css"],
+        "include": [
+          "**/*.css"
+        ],
         "id": "USAGE_SEMANTIC_TOKENS",
-        "tags": ["design-system", "tokens"],
+        "tags": [
+          "design-system",
+          "tokens"
+        ],
         "title": "Usage of semantic tokens",
         "startTrackingDate": "2025-05-19"
+      }
+    ],
+    "trackAdoptionMetrics": [
+      {
+        "label": "Button",
+        "id": "ADOPT_CITEO_BTN",
+        "debtRules": [
+          "REPLACE_LEGACY_BUTTON"
+        ],
+        "adoptionRules": [
+          "USAGE_CITEO_BTN"
+        ],
+        "tags": [
+          "react",
+          "angular"
+        ]
+      },
+      {
+        "label": "semantic tokens",
+        "id": "ADOPT_SEMANTIC_TOKENS",
+        "debtRules": [
+          "REMOVE_DS_CORE_TOKEN"
+        ],
+        "adoptionRules": [
+          "USAGE_SEMANTIC_TOKENS"
+        ],
+        "tags": [
+          "react",
+          "angular"
+        ]
+      },
+      {
+        "label": "Badge",
+        "id": "ADOPT_CITEO_BADGE",
+        "debtRules": [
+          "REPLACE_LEGACY_BADGE"
+        ],
+        "adoptionRules": [
+          "USAGE_CITEO_BADGE"
+        ],
+        "tags": [
+          "react",
+          "angular"
+        ]
       }
     ],
     "walkConfig": {

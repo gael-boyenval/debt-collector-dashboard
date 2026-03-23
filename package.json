@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "vitest",
     "preview": "vite preview",
-    "release": "npm version ${VERSION:-patch} && pnpm build && pnpm publish && git push && git push --tags"
+    "release": "f() { npm version ${1:-patch} && pnpm build && pnpm publish && git push && git push --tags; }; f"
   },
   "files": [
     "lib"
